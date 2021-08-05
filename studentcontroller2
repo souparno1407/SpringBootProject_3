@@ -1,0 +1,21 @@
+import java.util.List;  
+import org.springframework.beans.factory.annotation.Autowired;  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.RestController;  
+
+@RestController  
+public class StudentController2   
+{  
+		@Autowired  
+		private Student s1;  
+		
+		  
+		@GetMapping(value = "/student")  
+		public List<Student> getStudentDetails()   
+		{  
+			 
+			List<Student> student = s1.findAll();  
+			 
+			return student;  
+		}  
+}
